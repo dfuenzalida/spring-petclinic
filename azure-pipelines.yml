@@ -25,6 +25,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/target/spring-petclinic-2.4.5.jar'
+    targetPath: '$(Pipeline.Workspace)/s/target/spring-petclinic-2.4.5.jar'
     artifact: 'app.jar'
     publishLocation: 'pipeline'
