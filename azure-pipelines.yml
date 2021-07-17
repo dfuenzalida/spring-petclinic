@@ -15,9 +15,18 @@ steps:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    testRunTitle: 'Test report'
-    javaHomeOption: '1.11'
+    javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+    jdkVersionOption: 1.11
+    goals: 'clean package'
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'My PetClinic Service Connection'
+    appType: 'webAppLinux'
+    appName: 'mypetclinicdemo'
+    package: '$(System.DefaultWorkingDirectory)/target/spring-petclinic-2.4.5.jar'
+    runtimeStack: 'JAVA|11-java11'
