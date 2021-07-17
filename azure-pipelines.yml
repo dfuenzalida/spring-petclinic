@@ -22,7 +22,6 @@ steps:
     sonarQubeRunAnalysis: false
     jdkVersionOption: 1.11
     goals: 'clean package'
-    mavenOptions: '-B'
 
 - task: PublishBuildArtifacts@1
   inputs:
