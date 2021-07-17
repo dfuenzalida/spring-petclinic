@@ -23,9 +23,8 @@ steps:
     jdkVersionOption: 1.11
     goals: 'clean package'
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: 'target/spring-petclinic-2.4.5.jar'
-    TargetPath: 'drop/app.jar'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    targetPath: '$(Pipeline.Workspace)/target/spring-petclinic-2.4.5.jar'
+    artifact: 'app.jar'
+    publishLocation: 'pipeline'
