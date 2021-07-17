@@ -26,5 +26,6 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'target/spring-petclinic-2.4.5.jar'
+    TargetPath: 'app.jar'
     ArtifactName: 'drop'
     publishLocation: 'Container'
